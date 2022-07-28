@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KasirController;
+use App\Http\Controllers\ManagerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +18,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('starter');
+});
+
+
+Route::get('login',[AuthController::class,'index'])->name('login');
+Route::post('proses_login',[AuthController::class,'proses_login'])->name('proses_login');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::group(['middleware' => ['Cek_login:admin']], function() {
+        Route::get('admin',[AdminController::class,'index'])->name('admin');
+    });
+    Route::group(['middleware' => ['Cek_login:kasir']], function() {
+        Route::get('kasir',[KasirController::class,'index'])->name('kasir');
+    });
+    Route::group(['middleware' => ['Cek_login:manager']], function() {
+        Route::get('manager',[ManagerController::class,'index'])->name('manager');
+    });
+
 });
