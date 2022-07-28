@@ -210,14 +210,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Data Agenda
+                Data ADMIN
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="/real-guru" class="nav-link active">
-                  {{-- <i class="far fa-circle nav-icon"></i> --}}
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Guru</p>
                 </a>
               </li>
@@ -225,17 +225,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <li class="nav-item">
                 <a href="/kelas" class="nav-link active">
-                  {{-- <i class="far fa-circle nav-icon"></i> --}}
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Kelas</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="/agenda" class="nav-link active">
-                  {{-- <i class="far fa-circle nav-icon"></i> --}}
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Agenda</p>
                 </a>
-              </li>
+              </li> --}}
 
 
               {{-- <li class="nav-item">
@@ -291,7 +291,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       @yield('isi') --}}
 
 
-      <h1>ADMIN ONLY</h1>
+      <h1 class="text-white">ADMIN ONLY</h1>
 
 
 

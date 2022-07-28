@@ -17,12 +17,13 @@ use App\Http\Controllers\ManagerController;
 */
 
 Route::get('/', function () {
-    return view('starter');
+    return view('logout');
 });
 
 
 Route::get('login',[AuthController::class,'index'])->name('login');
 Route::post('proses_login',[AuthController::class,'proses_login'])->name('proses_login');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::group(['middleware' => ['Cek_login:admin']], function() {

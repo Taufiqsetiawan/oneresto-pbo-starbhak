@@ -292,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-      <h1>MANAGER ONLY</h1>
+      <h1 class="text-white">MANAGER ONLY</h1>
 
 
 
