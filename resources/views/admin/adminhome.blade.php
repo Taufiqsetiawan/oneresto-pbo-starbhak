@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="navbar-nav ml-auto"> 
         <li class="nav-item"> 
             <a class="nav-link" href="{{ url('logout') }}" role="button"> 
-                <i class="fas fa-sign-out-alt"></i> Log Out 
+                <i class="fas fa-sign-out-alt"></i> Log Out..
             </a> 
         </li> 
     </ul> 
