@@ -16,7 +16,8 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
             crossorigin="anonymous"></script>
     </head>
-    <body style="background-image: linear-gradient(to left,#FF0099,#493240)" class="">
+    <body style="background-color:#9b522b ">
+        {{-- background-image: linear-gradient(to right,#3E5151,#DECBA4) --}}
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -33,10 +34,11 @@
                                         </button>
                                     </div>
                                     @endif
-                                    <div class="card-header bg-dark">
+                                    
+                                    <div class="card-header" style="background-color: #3E5151">
                                         <h3 class="text-center text-white font-weight-bold my-4">Login</h3>
                                     </div>
-                                    <div class="card-body bg-dark">
+                                    <div class="card-body " style="background-image: linear-gradient(to bottom,#3E5151,#DECBA4)">
                                         <form action="{{url('proses_login')}}" method="POST" id="logForm">
                                             {{ csrf_field() }}
                                             <div class="form-group">
@@ -88,7 +90,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center  bg-dark">
+                                    <div class="card-footer text-center " style="background-color: #DECBA4">
                                         <div class="small">
                                             {{-- <a href="{{url('register')}}">Belum Punya Akun? Daftar!</a> --}}
                                         </div>
