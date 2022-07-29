@@ -218,7 +218,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="/real-guru" class="nav-link active">
                   {{-- <i class="far fa-circle nav-icon"></i> --}}
-                  <p>Data Guru</p>
+                  <p>Data admin</p>
                 </a>
               </li>
 
@@ -226,14 +226,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="/kelas" class="nav-link active">
                   {{-- <i class="far fa-circle nav-icon"></i> --}}
-                  <p>Data Kelas</p>
+                  <p>Data kasir</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="/agenda" class="nav-link active">
                   {{-- <i class="far fa-circle nav-icon"></i> --}}
-                  <p>Data Agenda</p>
+                  <p>Data manajer</p>
                 </a>
               </li>
 
