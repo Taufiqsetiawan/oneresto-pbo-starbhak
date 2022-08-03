@@ -37,3 +37,12 @@ Route::group(['middleware' => ['auth']], function() {
     });
 
 });
+
+
+
+// crud pesanan
+
+Route::get('/pesanan', [AgendaController::class,'index']);
+
+Route::post('/save-pesanan', [AgendaController::class,'store'])->name('simpan-pesanan');
+Route::get('/create-pesanan', [AgendaController::class,'create']);

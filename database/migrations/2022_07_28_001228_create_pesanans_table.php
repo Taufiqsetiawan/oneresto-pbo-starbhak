@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
+            $table->integer('nomeja');
             $table->string('food');
             $table->string('drink');
             $table->string('uname');
