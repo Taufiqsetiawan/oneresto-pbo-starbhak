@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/menus', App\Http\Controllers\MenuController::class);
+Route::apiResource('/profilhotels', App\Http\Controllers\ProfilhotelController::class);
+Route::apiResource('/jeniskategoris', App\Http\Controllers\JeniskategoriController::class);
 
 /*
 |--------------------------------------------------------------------------
