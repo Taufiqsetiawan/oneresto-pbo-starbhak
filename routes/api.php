@@ -21,3 +21,8 @@ Route::apiResource('/jeniskategoris', App\Http\Controllers\JeniskategoriControll
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// /**
+//  * route resource post
+//  */
+// Route::resource('/profilhotels', ProfilhotelController::class);

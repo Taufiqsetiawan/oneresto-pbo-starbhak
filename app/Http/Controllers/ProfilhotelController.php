@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class ProfilhotelController extends Controller
 {
     //
-      /**
+     /**
      * index
      *
      * @return void
@@ -18,14 +18,13 @@ class ProfilhotelController extends Controller
     public function index()
     {
         //get posts
-        $profilhotels = Profilhotel::latest()->paginate(5);
+        $profilhotels = Profilhotel::latest()->get();
 
         //return collection of posts as a resource
-        return new ProfilhotelResource(true, 'List Data Profil Hotels', $profilhotels);
+        return new ProfilhotelResource(true, 'List Data profilhotels', $profilhotels);
     }
 
-    
-    /**
+     /**
      * store
      *
      * @param  mixed $request
@@ -51,7 +50,7 @@ class ProfilhotelController extends Controller
         // $image = $request->file('image');
         // $image->storeAs('public/posts', $image->hashName());
 
-        //create post
+        //create profilhoteluuuuu bukan posttt!!!
         $profilhotel = Profilhotel::create([
             'nama_hotel'      => $request->nama_hotel,
             'nomor_kamar'     => $request->nomor_kamar,
@@ -61,16 +60,20 @@ class ProfilhotelController extends Controller
         ]);
 
         //return response
-        return new ProfilhotelResource(true, 'Data Profil Hotel Berhasil Ditambahkan!', $profilhotel);
+        return new ProfilhotelResource(true, 'Data profilhotel Berhasil Ditambahkan!', $profilhotel);
     }
-
+    /**
+     * show
+     *
+     * @param  mixed $post
+     * @return void
+     */
     public function show(Profilhotel $profilhotel)
     {
         //return single post as a resource
-        return new ProfilhotelResource(true, 'Data Profil Hotel Ditemukan!', $profilhotel);
+        return new ProfilhotelResource(true, 'Data profilhotel Ditemukan!', $profilhotel);
     }
 
-    
      /**
      * update
      *
@@ -78,10 +81,11 @@ class ProfilhotelController extends Controller
      * @param  mixed $post
      * @return void
      */
-    public function update(Request $request, Profilhotel $profilhotel)
+    public function update(Request $request, profilhotel $profilhotel)
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
+            'nama_hotel'       => 'required',
             'nomor_kamar'      => 'required',
             'alamat_hotel'     => 'required',
             'nomor_telp'       => 'required',
@@ -116,18 +120,18 @@ class ProfilhotelController extends Controller
 
             //update post without image
             $profilhotel->update([
-            'nomor_kamar'     => $request->nomor_kamar,
-            'alamat_hotel'    => $request->alamat_hotel,
-            'nomor_telp'      => $request->nomor_telp,
-            'id_pesanan'      => $request->id_pesanan,
+                'nomor_kamar'     => $request->nomor_kamar,
+                'alamat_hotel'    => $request->alamat_hotel,
+                'nomor_telp'      => $request->nomor_telp,
+                'id_pesanan'      => $request->id_pesanan,
             ]);
         }
 
         //return response
-        return new ProfilhotelResource(true, 'Data profil menu Berhasil Diubah!', $profilhotel);
+        return new ProfilhotelResource(true, 'Data profilhotel Berhasil Diubah!', $profilhotel);
     }
 
-     /**
+    /**
      * destroy
      *
      * @param  mixed $post
@@ -136,13 +140,13 @@ class ProfilhotelController extends Controller
     public function destroy(Profilhotel $profilhotel)
     {
         //delete image
-        // Storage::delete('public/profilhotels/'.$profilhotel->image);
+        // Storage::delete('public/profilhotels/'.$profilhotel->nama_hotel);
 
-        //delete profilhotel
+        //delete post
         $profilhotel->delete();
 
         //return response
-        return new ProfilhotelResource(true, 'Data Profil hotel Berhasil Dihapus!', null);
+        return new ProfilhotelResource(true, 'Data profilhotel Berhasil Dihapus!', null);
     }
-
 }
+
