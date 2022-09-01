@@ -18,7 +18,7 @@ class MenuController extends Controller
     public function index()
     {
         //get posts
-        $menus = Menu::latest()->paginate(5);
+        $menus = Menu::latest()->get();
 
         //return collection of posts as a resource
         return new MenuResource(true, 'List Data Menus', $menus);
@@ -34,14 +34,14 @@ class MenuController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
-            'idmenu'     => 'required',
+            'idmenu'       => 'required',
             'kategori'     => 'required',
-            'nama'    => 'required',
-            'harga'   => 'required',
-            'status'   => 'required',
-            'deskripsi'   => 'required',
-            'filename'   => 'required',
-            'level'   => 'required',
+            'nama'         => 'required',
+            'harga'        => 'required',
+            'status'       => 'required',
+            'deskripsi'    => 'required',
+            'filename'     => 'required',
+            'level'        => 'required',
         ]);
 
         //check if validation fails

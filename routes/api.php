@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::apiResource('/menus', App\Http\Controllers\MenuController::class);
 Route::apiResource('/profilhotels', App\Http\Controllers\ProfilhotelController::class);
 Route::apiResource('/jeniskategoris', App\Http\Controllers\JeniskategoriController::class);
@@ -22,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// /**
-//  * route resource post
-//  */
-// Route::resource('/profilhotels', ProfilhotelController::class);
+/**
+ * route resource ...?
+ */
+// Route::apiResource('/jeniskategoris', JeniskategoriController::class);
